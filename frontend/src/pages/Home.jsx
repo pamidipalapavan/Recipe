@@ -9,7 +9,7 @@ const Home = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/recipes');
+        const res = await axios.get('https://recipe-1-u4g9.onrender.com/api/recipes');
         setRecipes(res.data.data);
       } catch (err) {
         console.error('Failed to fetch recipes', err);

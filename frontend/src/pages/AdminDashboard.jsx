@@ -8,7 +8,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/admin/users');
+        const res = await axios.get('https://recipe-1-u4g9.onrender.com/api/admin/users');
         setUsers(res.data.data);
       } catch (err) {
         console.error(err);
@@ -22,8 +22,8 @@ const AdminDashboard = () => {
   const handleSuspend = async (id, currentStatus) => {
     try {
       const endpoint = currentStatus === 'active' ? 'suspend' : 'reactivate';
-      await axios.put(`http://localhost:5000/api/admin/users/${id}/${endpoint}`);
-      const res = await axios.get('http://localhost:5000/api/admin/users');
+      await axios.put(`https://recipe-1-u4g9.onrender.com/api/admin/users/${id}/${endpoint}`);
+      const res = await axios.get('https://recipe-1-u4g9.onrender.com/api/admin/users');
       setUsers(res.data.data);
     } catch (err) {
       console.error(err);

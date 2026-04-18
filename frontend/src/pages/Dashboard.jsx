@@ -17,7 +17,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchMyRecipes = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/recipes');
+        const res = await axios.get('https://recipe-1-u4g9.onrender.com/api/recipes');
         const mine = res.data.data.filter(r => r.author?._id === user._id || r.author === user._id);
         setMyRecipes(mine);
       } catch (err) {
