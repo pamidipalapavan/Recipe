@@ -38,7 +38,7 @@ const Dashboard = () => {
         ingredients: ingredients.split(',').map(i => i.trim()),
         steps: steps.split('\n').filter(s => s.trim() !== '')
       };
-      await axios.post('http://localhost:5000/api/recipes', newRecipe);
+      await axios.post('https://recipe-1-u4g9.onrender.com/api/recipes', newRecipe);
       setShowForm(false);
       window.location.reload();
     } catch (err) {
